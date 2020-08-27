@@ -1,0 +1,52 @@
+.imageupload {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  background-color: #ffffff;
+}
+
+.imageupload__caption {
+  padding: 20px;
+  border: 1px solid #cdcdcd;
+  outline: none;
+  text-transform: capitalize;
+  margin: 8px 0;
+}
+
+.imageupload__file {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+.imageupload__picture {
+  text-align: center;
+  color: white !important;
+  background: linear-gradient(90deg, #fc4a1a 0%, #f7b733 100%);
+}
+
+.imageupload__picture:hover,
+.imageupload__picture:focus {
+  animation: pulse 0.5s;
+  box-shadow: 0 0 7px 4px #f7b733;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #e4cb58;
+  }
+}
+
+.imageupload__snackbar {
+  position: absolute;
+  bottom: 8px;
+}
+
+@media only screen and (max-width: 768px) {
+  .imageupload {
+    width: auto !important;
+  }
+}

@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  background-color: #fafafa;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app__header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #ffffff;
+  object-fit: contain;
+  padding: 20px;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app_headerImage {
+  object-fit: contain;
+}
+
+.app__signup {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.app__text {
+  text-align: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.app__posts {
+  padding: 20px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.app__postsRight {
+  margin-left: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app__fab {
+  bottom: 18px;
+  position: fixed !important;
+  right: 0;
+  margin-right: 16px !important;
+  background: linear-gradient(90deg, #b24592 0%, #f15f79 100%);
+}
+
+.app__modal {
+  border: none !important;
+  outline: none !important;
+}
+
+.modal__box {
+  width: 400px;
+  border: none;
+  outline: none;
+  padding: 16px 32px 24px;
+  position: absolute;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .app__header {
+    padding: 0 20px;
+    height: 54px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .app__loginContainer {
+    padding: 10px 0;
+  }
+
+  .app__posts {
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .app__postsRight {
+    margin-left: 0;
+    width: -webkit-fill-available;
+  }
+
+  .app__signup {
+    align-items: center;
+  }
+
+  .modal__box {
+    max-width: 70% !important;
+    padding: 10px 20px 16px !important;
   }
 }

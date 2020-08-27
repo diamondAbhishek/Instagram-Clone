@@ -98,6 +98,9 @@ function App() {
     setOpenModal(true);
   };
 
+  const handleClose = () => {
+    setOpenModal(false);
+  };
 
   return (
     <div className="app">
@@ -115,21 +118,21 @@ function App() {
             </center>
 
             <Input
-              placeholder="Username"
+              placeholder="username"
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
 
             <Input
-              placeholder="Email"
+              placeholder="email"
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
 
             <Input
-              placeholder="Password"
+              placeholder="password"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -155,14 +158,14 @@ function App() {
             </center>
 
             <Input
-              placeholder="Email"
+              placeholder="email"
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
 
             <Input
-              placeholder="Password"
+              placeholder="password"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -215,39 +218,40 @@ function App() {
 
         </div>
 
-        {user?.displayName ? (
-          <Fab className="app__fab" color="primary" aria-label="add" onClick={handleOpen}>
-            <AddIcon />
-          </Fab>
-        ) : (
-            <span></span>
-          )}
+        <Fab className="app__fab" color="primary" aria-label="add" onClick={handleOpen}>
+          <AddIcon />
+        </Fab>
+
         <Modal
-          className="app__modal"
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          className=""
           open={openModal}
-          onClose={() => setOpenModal(false)}
+          onClose={handleClose}
           closeAfterTransition
           BackdropComponent={Backdrop}
           BackdropProps={{
             timeout: 500,
           }}
         >
-          {user?.displayName ? (
-            <Fade in={openModal}>
-              <div style={modalStyle} className="modal__box">
-                <ImageUpload username={user.displayName} />
-              </div>
-            </Fade>
-          ) : (
-              <Fade in={openModal}>
-                <h3 className="app__text">Sorry you need to login to upload</h3>
-              </Fade>
-            )
-          }
-
+          <Fade in={openModal}>
+            <div className={classes.paper}>
+              <h2 id="transition-modal-title">Transition modal</h2>
+              <p id="transition-modal-description">react-transition-group animates me.</p>
+            </div>
+          </Fade>
         </Modal>
 
       </div>
+
+
+
+      {user?.displayName ? (
+        <ImageUpload username={user.displayName} />
+      ) : (
+          <h3 className="app__text">Sorry you need to login to upload</h3>
+        )
+      }
 
     </div>
   );
