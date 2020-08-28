@@ -80,6 +80,16 @@
   font-weight: 600;
 }
 
+.post__cardaction {
+  position: relative;
+}
+
+.post__saveicon {
+  position: absolute !important;
+  right: 0 !important;
+  margin-right: 10px !important;
+}
+
 @media only screen and (max-width: 768px) {
   .post {
     margin-bottom: 15px;

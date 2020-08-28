@@ -8,8 +8,9 @@
 }
 
 .app__header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: -webkit-fill-available;
   z-index: 1;
   background-color: #ffffff;
   object-fit: contain;
@@ -35,6 +36,7 @@
 }
 
 .app__posts {
+  margin-top: 65px;
   padding: 20px;
   display: flex;
   justify-content: center;

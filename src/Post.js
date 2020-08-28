@@ -4,9 +4,10 @@ import Avatar from "@material-ui/core/Avatar"
 import { db } from './firebase';
 import firebase from 'firebase';
 import IconButton from '@material-ui/core/IconButton';
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import BookmarkBorderSharpIcon from '@material-ui/icons/BookmarkBorderSharp';
 import ShareIcon from '@material-ui/icons/Share';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import MoreHorizSharpIcon from '@material-ui/icons/MoreHorizSharp';
 import { CardActions } from '@material-ui/core';
 
 function Post({ postId, user, username, caption, imageUrl }) {
@@ -55,7 +56,7 @@ function Post({ postId, user, username, caption, imageUrl }) {
                 <h3>{username}</h3>
                 <div className="post__settings">
                     <IconButton aria-label="settings">
-                        <MoreVertIcon />
+                        <MoreHorizSharpIcon />
                     </IconButton>
 
                 </div>
@@ -63,12 +64,16 @@ function Post({ postId, user, username, caption, imageUrl }) {
 
             <img className="post__image" src={imageUrl} alt="" />
             <div className="post__icons">
-                <CardActions>
+                <CardActions className="post__cardaction">
                     <IconButton >
-                        <FavoriteIcon />
+                        <FavoriteBorderIcon />
                     </IconButton>
+
                     <IconButton >
                         <ShareIcon />
+                    </IconButton>
+                    <IconButton className="post__saveicon">
+                        <BookmarkBorderSharpIcon />
                     </IconButton>
                 </CardActions>
 
